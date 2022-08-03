@@ -14,14 +14,12 @@
         </div>
 
         <a-scene  
-            vr-mode-ui="enabled: false;"
-            renderer="logarithmicDepthBuffer: true; precision: medium;"
             embedded
-            arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+            arjs>
             <a-marker type="pattern" url="pattern-Kn0wn-Un.patt">
                 <a-box color="blue" width="3"></a-box>
             </a-marker>
-            <!-- <a-nft
+            <a-nft
                 type="nft"
                 url="image-markers/qr-code"
                 smooth="true"
@@ -30,7 +28,7 @@
                 smoothThreshold="5"
             >
                 <a-box color="red"></a-box>
-            </a-nft> -->
+            </a-nft>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
