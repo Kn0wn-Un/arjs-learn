@@ -4,6 +4,7 @@
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <!-- we import arjs version without NFT but with marker + location based support -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="index.js"></script>
     </head>
     <body style="margin : 0px; overflow: hidden;">
@@ -12,11 +13,25 @@
             <div>Loading, please wait...</div>
         </div>
 
-        <a-scene embedded arjs>
-        <a-marker type="pattern" url="pattern-Kn0wn-Un.patt">
-            <a-box color="blue" width="3"></a-box>
-        </a-marker>
-        <a-entity camera></a-entity>
+        <a-scene  
+        vr-mode-ui="enabled: false;"
+        renderer="logarithmicDepthBuffer: true; precision: medium;"
+        embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+            <!-- <a-marker type="pattern" url="pattern-Kn0wn-Un.patt">
+                <a-box color="blue" width="3"></a-box>
+            </a-marker> -->
+            <a-nft
+                type="nft"
+                url="qr-code"
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance=".01"
+                smoothThreshold="5"
+            >
+                <a-box color="red"></a-box>
+            </a-nft>
+            <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
